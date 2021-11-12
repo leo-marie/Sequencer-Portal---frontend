@@ -1,0 +1,179 @@
+#groove-box {
+ /* position: absolute; */
+ /* top: 50%;
+  left: 50%; */
+  width: 85%;
+  height: 85%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+ /* margin-left: -40vw; */
+  background: repeating-radial-gradient(circle at center, var(--color1) 0, var(--color2) 100%);
+  border-radius: 2%;
+  box-shadow: 1em 1em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: 1fr 1.5fr 7fr;
+  grid-template-areas:
+  "startstop bpm"
+  "display save"
+  "switchesandvolume switchesandvolume";
+}
+
+#startstop {
+  grid-area: startstop;
+  justify-self: center; /* horizontal align in grid */
+  align-self: center; /* vertical align in grid */
+  margin: 0;
+  font-size: 200%;
+}
+
+#bpm {
+  grid-area: bpm;
+  justify-self: center; /* horizontal align in grid */
+  align-self: center; /* vertical align in grid */
+  padding: 2vw 5vw 0 0;
+}
+
+#displaywrapper {
+  grid-area: display;
+  justify-self: center; /* horizontal align in grid */
+  align-self: center; /* vertical align in grid */
+  display: flex;
+  flex-direction: row;
+}
+
+#display {
+  justify-self: center; /* horizontal align in grid */
+  align-self: center; /* vertical align in grid */
+  text-align: center;
+  color: var(--color2);
+  background-color: var(--color4);
+  width: 40em;
+  margin: 0;
+  padding: 2%;
+  border-radius: 3%;
+  box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+}
+
+#bankbutton {
+  justify-self: center; /* horizontal align in grid */
+  align-self: center; /* vertical align in grid */
+  margin-left: 1em;
+  font-size: 200%;
+  display: flex;
+  flex-direction: column;
+}
+
+.switchesandvolume {
+  grid-area: switchesandvolume;
+  justify-self: center;
+  align-self: center;
+}
+
+.gridrow {
+  display: flex;
+  margin: 0;
+}
+
+
+.switch {
+  width: 3vw;
+  height: 5vh;
+  border: 1px solid var(--color1);
+  text-align: center;
+  margin: 0.25em;
+  border-radius: 10%;
+  color: var(--color1);
+  box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+}
+
+form { 
+  justify-content: flex-start; /* vertical align in flex when flex direction is row */
+  align-items: center; /* horizontal align in flex when flex direction is row */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: var(--color4);
+  padding-left: 6vh;
+}
+
+.icon{
+  color: var(--color3);
+  transition: transform .3s, color .2s; /* Animation */
+  }
+.icon:hover {
+  color: var(--color4);
+  transform: scale(1.2);
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 10%; /* Specified height */
+  background: var(--color2); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  margin-top: 7%;
+  border: 1px solid var(--color1);
+  border-radius: 30px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 1em; /* Set a specific slider handle width */
+  height: 1em; /* Slider handle height */
+  background: var(--color3); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 1em; /* Set a specific slider handle width */
+  height: 1em; /* Slider handle height */
+  background: var(--color3); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+#savebutton {
+  grid-area: save;
+  font-family: 'Exo', sans-serif;
+  width: 5vw;
+  height: 5vh;
+  border: 1px solid var(--color1);
+  justify-self: center; /* horizontal align in grid */
+  align-self: center; /* vertical align in grid */
+  margin: 0 5vw 0 0;
+  border-radius: 10%;
+  color: var(--color3);
+  background-color: var(--color2);
+  box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+  transition: color .3s, background-color .2s, box-shadow .25s; /* Animation */
+}
+
+#savebutton:hover {
+  color: var(--color4);
+  background-color: var(--color1);
+  box-shadow: 0 0 0.4em 0.4em var(--color4); 
+}
+
+#savebutton:active {
+  color: var(--color3);
+  background-color: var(--color1);
+  box-shadow: 0 0 0.4em 0.4em var(--color4); 
+}
+
+
+

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap');
+
+:root {
+  --color1: #000000;
+  --color2: #323232;
+  --color3: #FF1E56;
+  --color4: #FFAC41;
+  --color5: #575757;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+  background: repeating-radial-gradient(circle at center, var(--color1) 0, var(--color3), var(--color2) 100%);
+  min-height: 100vh; /* fix for body bigger than viewport. do not set width */
+  color: var(--color4);
+}
+
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+/*  max-width: 600px; */
+}
+
+.header {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.bio {
+  text-align: center;
+  margin-top: 16px;
+}
+
+#connectbutton {
+  text-align: center;
+  align-self: center;
+  margin-top: 1%;
+  font-family: 'Exo', sans-serif;
+  width: 10vw;
+  height: 5vh;
+  border: 1px solid var(--color1);
+  border-radius: 10%;
+  color: var(--color3);
+  background-color: var(--color2);
+  box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+  transition: color .3s, background-color .2s, box-shadow .25s; /* Animation */
+}
+
+#connectbutton:hover {
+  color: var(--color4);
+  background-color: var(--color1);
+  box-shadow: 0 0 0.4em 0.4em var(--color4); 
+}
+
+#connectbutton:active {
+  color: var(--color3);
+  background-color: var(--color1);
+  box-shadow: 0 0 0.4em 0.4em var(--color4); 
+}
+
+.sequenceCard {
+  background-color: var(--color5);
+  margin-top: 16px;
+  padding: 8px;
+  border: 1px solid var(--color4);
+  border-radius: 3px;
+}
