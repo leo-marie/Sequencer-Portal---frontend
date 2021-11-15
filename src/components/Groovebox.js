@@ -168,7 +168,7 @@ const [savedSequence, setSavedSequence] = useState({
 */
 
 
-// -----   SET STATE METHODS   -----
+// -----   USE EFFECT   -----
 
 // the loop
 useEffect(() => {
@@ -181,7 +181,6 @@ useEffect(() => {
     clearTimeout(timer);
   };
 }, [currentStep, isOn, bpm]);
-
 
 // reset when stop
 useEffect(() => {
@@ -209,6 +208,28 @@ useEffect(() => {
   }
 }, [mood] )
 
+// themes
+useEffect(() => {
+  if(mood == "tekno") {
+    document.documentElement.style.setProperty('--color1', '#000000');
+    document.documentElement.style.setProperty('--color2', '#323232');
+    document.documentElement.style.setProperty('--color3', '#FF1E56');
+    document.documentElement.style.setProperty('--color4', '#FFAC41');
+    document.documentElement.style.setProperty('--color5', '#575757');
+  } else if(mood == "dub") {
+    document.documentElement.style.setProperty('--color1', '#000000');
+    document.documentElement.style.setProperty('--color2', '#123e01');
+    document.documentElement.style.setProperty('--color3', '#fae409');
+    document.documentElement.style.setProperty('--color4', '#d4291d');
+    document.documentElement.style.setProperty('--color5', '#185302');
+  } else if(mood == "jungle") {
+    document.documentElement.style.setProperty('--color1', '#000000');
+    document.documentElement.style.setProperty('--color2', '#0a2b1b');
+    document.documentElement.style.setProperty('--color3', '#8f9b45');
+    document.documentElement.style.setProperty('--color4', '#dfd97f');
+    document.documentElement.style.setProperty('--color5', '#445f38');
+  }
+}, [mood] )
 
 // -----   SET STATE METHODS   -----
 
@@ -217,6 +238,7 @@ const startStop = () => {
   if(isOn) {
     setIsOn(false)
   } else {setIsOn(true)}
+  console.log(volume)
 }
 
 // Set BPM
@@ -232,7 +254,6 @@ const handleVolumeChange = e => {
       [name]: parseFloat(value)
   }));
 };
-
 
 // Set Mood
 const handleIncrementMood = () => {
@@ -273,6 +294,7 @@ const handleSequenceSave = () => {
     setSavedSequence(sequenceToSave);
 }
 */
+
 /*
 const handleSequenceSave = () => {
   var actualSequence = sequence.concat();
@@ -320,6 +342,7 @@ const deparseSequence = (sequence) => {
 let finalArray = [array1, array2, array3, array4, array5, array6, array7];
 return finalArray;
 }
+
 
 // -----   RETURN   -----
 

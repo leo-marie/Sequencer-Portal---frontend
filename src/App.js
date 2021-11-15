@@ -11,6 +11,7 @@ const App = () => {
 const [currentAccount, setCurrentAccount] = useState("");
 const [allSequences, setAllSequences] = useState([]);
 const myRef = useRef();
+const [inputSequence, setInputSequence] = useState("");
 /**
  * Create a variable here that holds the contract address after you deploy!
  */
@@ -190,6 +191,8 @@ return (
       <div id="groovebox-container">
         <Groovebox ref={myRef} saveSequence={saveSequence} />
       </div>
+      <input className="textinput" value={inputSequence} onChange={e => setInputSequence(e.target.value)} />
+      
       {allSequences.map((seq, index) => {
           return (
             <div key={index} className="sequenceCard">
