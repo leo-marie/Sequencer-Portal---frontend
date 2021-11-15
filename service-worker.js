@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Sequencer-Portal---frontend/precache-manifest.90d5a38d5f345b99faa25b379f539272.js"
+  "/Sequencer-Portal---frontend/precache-manifest.5f06388f1b8dd62576d6660df7ca51ea.js"
 );
 
 self.addEventListener('message', (event) => {
