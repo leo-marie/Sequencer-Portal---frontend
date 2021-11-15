@@ -131,7 +131,7 @@ const Groovebox = React.forwardRef((props, ref) => {
 
 const [isOn, setIsOn] = useState(false);
 const [currentStep, setCurrentStep] = useState(0);
-const [bpm, setBpm] = useState(120);
+const [bpm, setBpm] = useState(560);
 const [display, setDisplay] = useState("click to start");
 const [volume, setVolume] = useState({
   ins01: 1,
@@ -143,8 +143,8 @@ const [volume, setVolume] = useState({
   ins07: 1,
   ins08: 1
 });
-const [mood, setMood] = useState("dub");
-const [dataArray, setDataArray] = useState(createDataArray(datadub));
+const [mood, setMood] = useState("tekno");
+const [dataArray, setDataArray] = useState(createDataArray(datatekno));
 const [sequence, setSequence] = useState([
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -353,7 +353,8 @@ return (
     {PlayStopButton}
   </div>
   <form id="bpm">
-    <label for="points">BPM</label>
+    <label for="points"></label>
+    <div id="bpmdisplay">BPM : {Math.floor(bpm/4)}</div>
     <input type="range" id="points" name="points" min="120" max="1000" className="slider" onInput={handleBpmChange} onChange={handleBpmChange}></input>
   </form>
   <div id="displaywrapper">
@@ -374,7 +375,7 @@ return (
       key={d.id + d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Kick</label>
+        <label for="points"></label>
         <input type="range" name="ins01" id="ins01Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
@@ -385,7 +386,7 @@ return (
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Snare</label>
+        <label for="points"></label>
         <input type="range" name="ins02" id="ins02Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
@@ -396,7 +397,7 @@ return (
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Closed Hat</label>
+        <label for="points"></label>
         <input type="range" name="ins03" id="ins03Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
@@ -406,7 +407,7 @@ return (
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Rim</label>
+        <label for="points"></label>
         <input type="range" name="ins04" id="ins04Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
@@ -416,7 +417,7 @@ return (
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Woodblock</label>
+        <label for="points"></label>
         <input type="range" name="ins05" id="ins05Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
@@ -426,7 +427,7 @@ return (
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Guitar</label>
+        <label for="points"></label>
         <input type="range" name="ins06" id="ins06Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
@@ -436,7 +437,7 @@ return (
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Synare</label>
+        <label for="points"></label>
         <input type="range" name="ins07" id="ins07Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
@@ -446,7 +447,7 @@ return (
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
       )}
       <form className="volume">
-        <label for="points">Crash</label>
+        <label for="points"></label>
         <input type="range" name="ins08" id="ins08Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>

@@ -3,7 +3,7 @@
  /* top: 50%;
   left: 50%; */
   width: 85%;
-  height: 85%;
+  height: 82%;
   margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
@@ -13,7 +13,7 @@
   box-shadow: 1em 1em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
   display: grid;
   grid-template-columns: 6fr 1fr;
-  grid-template-rows: 1fr 1.5fr 7fr;
+  grid-template-rows: 0.5fr 1.5fr 7fr;
   grid-template-areas:
   "startstop bpm"
   "display save"
@@ -76,7 +76,6 @@
   margin: 0;
 }
 
-
 .switch {
   width: 3vw;
   height: 5vh;
@@ -89,7 +88,7 @@
 }
 
 form { 
-  justify-content: flex-start; /* vertical align in flex when flex direction is row */
+  justify-content: center; /* vertical align in flex when flex direction is row */
   align-items: center; /* horizontal align in flex when flex direction is row */
   text-align: center;
   display: flex;
@@ -175,5 +174,16 @@ form {
   box-shadow: 0 0 0.4em 0.4em var(--color4); 
 }
 
-
+#bpmdisplay {
+  justify-self: center; /* horizontal align in grid */
+  align-self: center; /* vertical align in grid */
+  text-align: center;
+  color: var(--color2);
+  background-color: var(--color4);
+  width: 8em;
+  margin: 0;
+  padding: 1%;
+  border-radius: 3%;
+  box-shadow: 0.6em 0.6em 2em 0.5em var(--color1), 0 0 0.4em 0.4em var(--color1); 
+}
 
