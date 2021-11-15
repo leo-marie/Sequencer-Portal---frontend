@@ -7,17 +7,17 @@ import { FaStop } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 
-/*
+
 const datatekno = [
-  { id: 'ins01', letter: 'Q', src: '/samples/korg_ins01.mp3' },
-  { id: 'ins02', letter: 'W', src: '/samples/korg_ins02.mp3' },
-  { id: 'ins03', letter: 'E', src: '/samples/korg_ins03.mp3' },
-  { id: 'ins04', letter: 'A', src: '/samples/korg_ins04.mp3' },
-  { id: 'ins05', letter: 'S', src: '/samples/korg_ins05.mp3' },
-  { id: 'ins06', letter: 'D', src: '/samples/korg_ins06.mp3' },
-  { id: 'ins07', letter: 'Z', src: '/samples/korg_ins07.mp3' },
-  { id: 'ins08', letter: 'X', src: '/samples/korg_ins08.mp3' }];
-*/
+  { id: 'ins01', letter: 'Q', src: '/samples/tekno01.mp3' },
+  { id: 'ins02', letter: 'W', src: '/samples/tekno02.mp3' },
+  { id: 'ins03', letter: 'E', src: '/samples/tekno03.mp3' },
+  { id: 'ins04', letter: 'A', src: '/samples/tekno04.mp3' },
+  { id: 'ins05', letter: 'S', src: '/samples/tekno05.mp3' },
+  { id: 'ins06', letter: 'D', src: '/samples/tekno06.mp3' },
+  { id: 'ins07', letter: 'Z', src: '/samples/tekno07.mp3' },
+  { id: 'ins08', letter: 'X', src: '/samples/tekno08.mp3' }];
+
 
 const datadub = [
   { id: 'ins01', letter: 'Q', src: '/samples/dub01.mp3' },
@@ -28,6 +28,16 @@ const datadub = [
   { id: 'ins06', letter: 'D', src: '/samples/dub06.mp3' },
   { id: 'ins07', letter: 'Z', src: '/samples/dub07.mp3' },
   { id: 'ins08', letter: 'X', src: '/samples/dub08.mp3' }];
+
+const datajungle = [
+  { id: 'ins01', letter: 'Q', src: '/samples/jungle01.mp3' },
+  { id: 'ins02', letter: 'W', src: '/samples/jungle02.mp3' },
+  { id: 'ins03', letter: 'E', src: '/samples/jungle03.mp3' },
+  { id: 'ins04', letter: 'A', src: '/samples/jungle04.mp3' },
+  { id: 'ins05', letter: 'S', src: '/samples/jungle05.mp3' },
+  { id: 'ins06', letter: 'D', src: '/samples/jungle06.mp3' },
+  { id: 'ins07', letter: 'Z', src: '/samples/jungle07.mp3' },
+  { id: 'ins08', letter: 'X', src: '/samples/jungle08.mp3' }];
 
 
 const moodArray = ["tekno", "dub", "jungle"];
@@ -188,15 +198,17 @@ useEffect(() => {
   else {PlayStopButton = <FaStop onClick={startStop} className="icon" /> }
 }, [isOn])
 
-/*
+
 useEffect(() => {
   if(mood == "tekno") {
     setDataArray(createDataArray(datatekno))
   } else if(mood == "dub") {
     setDataArray(createDataArray(datadub))
+  } else if(mood == "jungle") {
+    setDataArray(createDataArray(datajungle))
   }
 }, [mood] )
-*/
+
 
 // -----   SET STATE METHODS   -----
 
@@ -221,7 +233,7 @@ const handleVolumeChange = e => {
   }));
 };
 
-/*
+
 // Set Mood
 const handleIncrementMood = () => {
   if(moodArray.indexOf(mood) < moodArray.length - 1) {
@@ -237,7 +249,6 @@ const handleDecrementMood = () => {
     setMood(moodArray[moodArray.length - 1])
   }
 }
-*/
 
 // Set Sequence
 const handleSequenceChange = (e, s) => {
@@ -324,15 +335,13 @@ return (
   </form>
   <div id="displaywrapper">
     <div id="display">
-      {display}
+      {mood} - {display}
     </div>
-    {/*
     <div id="bankbutton">
       <FaCaretUp className="icon" onClick={handleIncrementMood} />
       <div style={{fontSize:'0.5em'}}>Bank</div>
       <FaCaretDown className="icon" onClick={handleDecrementMood} />
     </div>
-    */}
   </div>
   <button id="savebutton" onClick={props.saveSequence}>Save</button>
   <div id="switches" className="switchesandvolume">
