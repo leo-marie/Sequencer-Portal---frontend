@@ -9,35 +9,35 @@ import { FaCaretDown } from "react-icons/fa";
 
 
 const datatekno = [
-  { id: 'ins01', letter: 'Q', src: '/samples/tekno01.mp3' },
-  { id: 'ins02', letter: 'W', src: '/samples/tekno02.mp3' },
-  { id: 'ins03', letter: 'E', src: '/samples/tekno03.mp3' },
-  { id: 'ins04', letter: 'A', src: '/samples/tekno04.mp3' },
-  { id: 'ins05', letter: 'S', src: '/samples/tekno05.mp3' },
-  { id: 'ins06', letter: 'D', src: '/samples/tekno06.mp3' },
-  { id: 'ins07', letter: 'Z', src: '/samples/tekno07.mp3' },
-  { id: 'ins08', letter: 'X', src: '/samples/tekno08.mp3' }];
+  { id: 'ins01', letter: 'Q', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno01.mp3' },
+  { id: 'ins02', letter: 'W', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno02.mp3' },
+  { id: 'ins03', letter: 'E', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno03.mp3' },
+  { id: 'ins04', letter: 'A', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno04.mp3' },
+  { id: 'ins05', letter: 'S', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno05.mp3' },
+  { id: 'ins06', letter: 'D', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno06.mp3' },
+  { id: 'ins07', letter: 'Z', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno07.mp3' },
+  { id: 'ins08', letter: 'X', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno08.mp3' }];
 
 
 const datadub = [
-  { id: 'ins01', letter: 'Q', src: '/samples/dub01.mp3' },
-  { id: 'ins02', letter: 'W', src: '/samples/dub02.mp3' },
-  { id: 'ins03', letter: 'E', src: '/samples/dub03.mp3' },
-  { id: 'ins04', letter: 'A', src: '/samples/dub04.mp3' },
-  { id: 'ins05', letter: 'S', src: '/samples/dub05.mp3' },
-  { id: 'ins06', letter: 'D', src: '/samples/dub06.mp3' },
-  { id: 'ins07', letter: 'Z', src: '/samples/dub07.mp3' },
-  { id: 'ins08', letter: 'X', src: '/samples/dub08.mp3' }];
+  { id: 'ins01', letter: 'Q', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub01.mp3' },
+  { id: 'ins02', letter: 'W', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub02.mp3' },
+  { id: 'ins03', letter: 'E', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub03.mp3' },
+  { id: 'ins04', letter: 'A', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub04.mp3' },
+  { id: 'ins05', letter: 'S', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub05.mp3' },
+  { id: 'ins06', letter: 'D', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub06.mp3' },
+  { id: 'ins07', letter: 'Z', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub07.mp3' },
+  { id: 'ins08', letter: 'X', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub08.mp3' }];
 
 const datajungle = [
-  { id: 'ins01', letter: 'Q', src: '/samples/jungle01.mp3' },
-  { id: 'ins02', letter: 'W', src: '/samples/jungle02.mp3' },
-  { id: 'ins03', letter: 'E', src: '/samples/jungle03.mp3' },
-  { id: 'ins04', letter: 'A', src: '/samples/jungle04.mp3' },
-  { id: 'ins05', letter: 'S', src: '/samples/jungle05.mp3' },
-  { id: 'ins06', letter: 'D', src: '/samples/jungle06.mp3' },
-  { id: 'ins07', letter: 'Z', src: '/samples/jungle07.mp3' },
-  { id: 'ins08', letter: 'X', src: '/samples/jungle08.mp3' }];
+  { id: 'ins01', letter: 'Q', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle01.mp3' },
+  { id: 'ins02', letter: 'W', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle02.mp3' },
+  { id: 'ins03', letter: 'E', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle03.mp3' },
+  { id: 'ins04', letter: 'A', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle04.mp3' },
+  { id: 'ins05', letter: 'S', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle05.mp3' },
+  { id: 'ins06', letter: 'D', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle06.mp3' },
+  { id: 'ins07', letter: 'Z', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle07.mp3' },
+  { id: 'ins08', letter: 'X', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle08.mp3' }];
 
 
 const moodArray = ["tekno", "dub", "jungle"];
