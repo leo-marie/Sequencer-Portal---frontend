@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Sequencer-Portal/static/css/main.6665d2cc.chunk.css",
+    "main.js": "/Sequencer-Portal/static/js/main.d7091edc.chunk.js",
+    "main.js.map": "/Sequencer-Portal/static/js/main.d7091edc.chunk.js.map",
+    "runtime-main.js": "/Sequencer-Portal/static/js/runtime-main.bd859ca4.js",
+    "runtime-main.js.map": "/Sequencer-Portal/static/js/runtime-main.bd859ca4.js.map",
+    "static/js/2.4114ebec.chunk.js": "/Sequencer-Portal/static/js/2.4114ebec.chunk.js",
+    "static/js/2.4114ebec.chunk.js.map": "/Sequencer-Portal/static/js/2.4114ebec.chunk.js.map",
+    "index.html": "/Sequencer-Portal/index.html",
+    "precache-manifest.a723f3ca95dbc258ec3bea532d8ce029.js": "/Sequencer-Portal/precache-manifest.a723f3ca95dbc258ec3bea532d8ce029.js",
+    "service-worker.js": "/Sequencer-Portal/service-worker.js",
+    "static/css/main.6665d2cc.chunk.css.map": "/Sequencer-Portal/static/css/main.6665d2cc.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd859ca4.js",
+    "static/js/2.4114ebec.chunk.js",
+    "static/css/main.6665d2cc.chunk.css",
+    "static/js/main.d7091edc.chunk.js"
+  ]
+}
