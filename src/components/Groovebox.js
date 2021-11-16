@@ -7,7 +7,6 @@ import { FaStop } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 
-
 const datatekno = [
   { id: 'ins01', letter: 'Q', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno01.mp3' },
   { id: 'ins02', letter: 'W', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno02.mp3' },
