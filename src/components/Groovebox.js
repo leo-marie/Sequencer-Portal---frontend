@@ -6,6 +6,45 @@ import { FaPlay } from "react-icons/fa";
 import { FaStop } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
+import * as Tone from 'tone';
+
+
+// new ins
+
+var tekno01 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno01.mp3").toDestination();
+var tekno02 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno02.mp3").toDestination();
+var tekno03 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno03.mp3").toDestination();
+var tekno04 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno04.mp3").toDestination();
+var tekno05 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno05.mp3").toDestination();
+var tekno06 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno06.mp3").toDestination();
+var tekno07 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno07.mp3").toDestination();
+var tekno08 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno08.mp3").toDestination();
+var playerstekno = [tekno01, tekno02, tekno03, tekno04, tekno05, tekno06, tekno07, tekno08];
+
+var dub01 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub01.mp3").toDestination();
+var dub02 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub02.mp3").toDestination();
+var dub03 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub03.mp3").toDestination();
+var dub04 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub04.mp3").toDestination();
+var dub05 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub05.mp3").toDestination();
+var dub06 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub06.mp3").toDestination();
+var dub07 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub07.mp3").toDestination();
+var dub08 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/dub08.mp3").toDestination();
+var playersdub = [dub01, dub02, dub03, dub04, dub05, dub06, dub07, dub08];
+
+var jungle01 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle01.mp3").toDestination();
+var jungle02 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle02.mp3").toDestination();
+var jungle03 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle03.mp3").toDestination();
+var jungle04 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle04.mp3").toDestination();
+var jungle05 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle05.mp3").toDestination();
+var jungle06 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle06.mp3").toDestination();
+var jungle07 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle07.mp3").toDestination();
+var jungle08 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/jungle08.mp3").toDestination();
+var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06, jungle07, jungle08];
+
+var players = playerstekno;
+var beat = 0; // !!! declare before component or it can't be global !
+
+// old ins
 
 const datatekno = [
   { id: 'ins01', letter: 'Q', src: 'https://raw.githubusercontent.com/leo-marie/Sequencer-Portal---frontend/main/public/samples/tekno01.mp3' },
@@ -41,7 +80,7 @@ const datajungle = [
 
 const moodArray = ["tekno", "dub", "jungle"];
 
-
+// can remove ?
 // create one array for each instrument
 let ins01Array = [];
 let ins02Array = [];
@@ -117,7 +156,6 @@ const createDataArray = (data) => {
   return [ins01Array, ins02Array, ins03Array, ins04Array, ins05Array, ins06Array, ins07Array, ins08Array];
 }
 
-
 let PlayStopButton;
 
 const emptySequence = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0";
@@ -127,7 +165,7 @@ const emptySequence = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 const Groovebox = React.forwardRef((props, ref) => {
 
 // -----   HOOKS   -----
-
+const [started, setStarted] = useState(false);
 const [isOn, setIsOn] = useState(false);
 const [currentStep, setCurrentStep] = useState(0);
 const [bpm, setBpm] = useState(560);
@@ -154,10 +192,10 @@ const [sequence, setSequence] = useState([
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]);
-
 const [savedSequence, setSavedSequence] = useState("");
  useImperativeHandle(ref, () => ({getSequence: () => {return sequence.toString()}}), [sequence]);
 // No array because doesn t rerender + easier to store on blockchain
+
 /*
 const [savedSequence, setSavedSequence] = useState({
   tekno: emptySequence,
@@ -166,37 +204,79 @@ const [savedSequence, setSavedSequence] = useState({
 });
 */
 
+// new
+// -----   THE LOOP   -----
+
+const configLoop = () => {
+  const repeat = (time) => {
+    console.log(beat)
+    sequence.forEach((row) => {
+      let pad = row[beat];
+      if (pad === 1) {
+        players[sequence.indexOf(row)].start(time);
+      }
+    });
+    beat = (beat + 1) % 16;
+  };
+  Tone.Transport.bpm.value = 120;
+  Tone.Transport.scheduleRepeat(repeat, "16n");
+};
 
 // -----   USE EFFECT   -----
 
+
+ // old
+ // used for rerendering
 // the loop
 useEffect(() => {
   const timer = setTimeout(() => {
     if (isOn == true) {
       setCurrentStep((currentStep + 1) % 16);
     }
-  }, 60000/bpm);
+  }, (60000/bpm)/10);
   return () => {
     clearTimeout(timer);
   };
 }, [currentStep, isOn, bpm]);
 
+/*
+// modify that
 // reset when stop
 useEffect(() => {
   if (!isOn) {setCurrentStep(0)}
 }, [isOn])
+*/
 
+// new
+useEffect(() => {
+  if (isOn) {setDisplay(beat+1)}
+  else {setDisplay("Click to Start !")}
+}, [, currentStep])
+
+// old
+/*
 useEffect(() => {
   if (isOn) {setDisplay(currentStep+1)}
   else {setDisplay("Click to Start !")}
 }, [isOn, currentStep])
+*/
 
 useEffect(() => {
   if (!isOn) {PlayStopButton = <FaPlay onClick={startStop} className="icon" /> }
   else {PlayStopButton = <FaStop onClick={startStop} className="icon" /> }
 }, [isOn])
 
-
+useEffect(() => {
+  if(mood == "tekno") {
+    players = playerstekno;
+  } else if(mood == "dub") {
+    players = playersdub;
+  } else if(mood == "jungle") {
+    players = playersjungle;
+  }
+}, [mood] )
+// old
+/*
 useEffect(() => {
   if(mood == "tekno") {
     setDataArray(createDataArray(datatekno))
@@ -206,6 +286,7 @@ useEffect(() => {
     setDataArray(createDataArray(datajungle))
   }
 }, [mood] )
+*/
 
 // themes
 useEffect(() => {
@@ -232,6 +313,24 @@ useEffect(() => {
 
 // -----   SET STATE METHODS   -----
 
+const startStop = () => {
+  beat = 0;
+  if(isOn) {
+    Tone.Transport.stop();
+    setIsOn(false);
+    
+  } else { // if was off
+    if(!started) {
+      Tone.start();
+      configLoop();
+      setStarted(true);
+    }
+    setIsOn(true);
+    Tone.Transport.start();
+  }
+};
+// old
+/*
 // Set isOn
 const startStop = () => {
   if(isOn) {
@@ -239,12 +338,16 @@ const startStop = () => {
   } else {setIsOn(true)}
   console.log(volume)
 }
+*/
 
+// modify that
 // Set BPM
 const handleBpmChange = (event) => {
-  setBpm(event.target.value)
+  setBpm(event.target.value) // just for rerender
+  Tone.Transport.bpm.value = event.target.value;
 }
 
+// modify that
 // Set Volumes
 const handleVolumeChange = e => {
   const { name, value } = e.target;
@@ -271,7 +374,7 @@ const handleDecrementMood = () => {
 }
 
 // Set Sequence
-const handleSequenceChange = (e, s) => {
+const handleSequence = (e, s) => {
   const id = e.target.id;
   const step = s;
   const instIndex = parseInt(id.slice(-1)-1);
@@ -353,8 +456,8 @@ return (
   </div>
   <form id="bpm">
     <label for="points"></label>
-    <div id="bpmdisplay">BPM : {Math.floor(bpm/4)}</div>
-    <input type="range" id="points" name="points" min="120" max="1000" className="slider" onInput={handleBpmChange} onChange={handleBpmChange}></input>
+    <div id="bpmdisplay">BPM : {Math.floor(Tone.Transport.bpm.value)}</div>
+    <input type="range" id="points" name="points" min="60" max="320" className="slider" onInput={handleBpmChange} onChange={handleBpmChange}></input>
   </form>
   <div id="displaywrapper">
     <div id="display">
@@ -371,7 +474,7 @@ return (
     <div className="gridrow">
       {dataArray[0].map((d) =>
       <Switch 
-      key={d.id + d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id + d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>
@@ -382,7 +485,7 @@ return (
     <div className="gridrow">
       {dataArray[1].map((d) =>
       <Switch 
-      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>
@@ -393,7 +496,7 @@ return (
     <div className="gridrow">
       {dataArray[2].map((d) =>
       <Switch 
-      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>
@@ -403,7 +506,7 @@ return (
     <div className="gridrow">
       {dataArray[3].map((d) =>
       <Switch 
-      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>
@@ -413,7 +516,7 @@ return (
     <div className="gridrow">
       {dataArray[4].map((d) =>
       <Switch 
-      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>
@@ -423,7 +526,7 @@ return (
     <div className="gridrow">
       {dataArray[5].map((d) =>
       <Switch 
-      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>
@@ -433,7 +536,7 @@ return (
     <div className="gridrow">
       {dataArray[6].map((d) =>
       <Switch 
-      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>
@@ -443,7 +546,7 @@ return (
     <div className="gridrow">
       {dataArray[7].map((d) =>
       <Switch 
-      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} currentStep={currentStep} isOn={isOn} volume={volume} handleSequenceChange={handleSequenceChange} />
+      key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
       <form className="volume">
         <label for="points"></label>

@@ -11,31 +11,32 @@ function Switch(props) {
 const [clicked, setClicked] = useState(false);
 const [backgroundColor, setBackgroundColor] = useState("var(--color2)");
 
+// put this in groovebox
 // play audio and background color
 useEffect(() => {
 if(props.isOn) {
-    if(props.step == props.currentStep && clicked) {
+    if(props.step == props.beat && clicked) {
         setBackgroundColor('var(--color3)');
-        var audio = new Audio(props.src);
+      /*  var audio = new Audio(props.src);
         let instrument = props.id;
         audio.volume = props.volume[instrument];
-        audio.play();
-    } else if(props.step != props.currentStep && clicked) {
+        audio.play();*/
+    } else if(props.step != props.beat && clicked) {
         setBackgroundColor('var(--color4)')
-    } else if(props.step == props.currentStep && !clicked) {
+    } else if(props.step == props.beat && !clicked) {
         setBackgroundColor("var(--color5)")
     } else {setBackgroundColor('var(--color2)') }
 } else if(!props.isOn) {
     if(clicked) {setBackgroundColor('var(--color4)')
     } else {setBackgroundColor('var(--color2)')}
 }
-}, [props.currentStep, clicked, props.isOn]);
+}, [props.beat, clicked, props.isOn]);
 
 
 //   -----   METHODS   -----
 
 
-const handleClick = () => {
+const handleStyle = () => {
     if(clicked) {
         setClicked(false);
 
@@ -51,8 +52,8 @@ const handleClick = () => {
 
 // We just create 1 model of switch and define its properties, we create the grid and pass value through parent
 <div style={{backgroundColor: backgroundColor}} className="switch" id={props.id} step={props.step} onClick={(e) => {
-    handleClick(); 
-    props.handleSequenceChange(e, props.step);
+    handleStyle(); 
+    props.handleSequence(e, props.step);
     }}>
     {props.step+1}
     <audio src={props.src} className="clip" id={props.letter}></audio>
