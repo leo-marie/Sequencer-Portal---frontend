@@ -451,6 +451,23 @@ let finalArray = [array1, array2, array3, array4, array5, array6, array7];
 return finalArray;
 }
 
+/*
+// create the grid here
+const grid =dataArray.map((data,id)=>{
+  return  (
+  <div className="gridrow">
+      
+  {dataArray[id].map((d) =>
+  <Switch 
+  key={d.id + d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
+  )}
+  <form className="volume">
+    <label for="points"></label>
+    <input type="range" name="ins01" id="ins01Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
+  </form>
+</div>)
+})
+*/
 
 // -----   RETURN   -----
 
@@ -477,7 +494,38 @@ return (
   </div>
   <button id="savebutton" onClick={props.saveSequence}>Save</button>
   <div id="switches" className="switchesandvolume">
+    
+  <>
+    {dataArray.map((data,id)=>{
+  return  (
+  <div className="gridrow">
+      
+  {dataArray[id].map((d) =>
+  <Switch 
+  key={d.id + d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
+  )}
+  <form className="volume">
+    <label for="points"></label>
+    <input type="range" name="ins01" id="ins01Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
+  </form>
+</div>)
+})}
+
+    </>
+
+
+
+{/* 
+  <>
+    {grid}
+
+    </>
+
+*/}
+
+    {/* 
     <div className="gridrow">
+      
       {dataArray[0].map((d) =>
       <Switch 
       key={d.id + d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
@@ -554,11 +602,16 @@ return (
       <Switch 
       key={d.id+ d.step} src={d.src} letter={d.letter} id={d.id} step={d.step} beat={beat} isOn={isOn} volume={volume} handleSequence={handleSequence} />
       )}
+      
       <form className="volume">
         <label for="points"></label>
         <input type="range" name="ins08" id="ins08Volume" min="0" max="1" step="0.01" className="slider" onInput={handleVolumeChange} onChange={handleVolumeChange}></input>
       </form>
     </div>
+    
+    */}
+
+
   </div>
 </div>
   );
