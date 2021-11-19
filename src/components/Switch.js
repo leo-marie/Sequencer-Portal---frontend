@@ -11,8 +11,7 @@ function Switch(props) {
 const [clicked, setClicked] = useState(false);
 const [backgroundColor, setBackgroundColor] = useState("var(--color2)");
 
-// put this in groovebox
-// play audio and background color
+// background color
 useEffect(() => {
 if(props.isOn) {
     if(props.step == props.beat && clicked) {

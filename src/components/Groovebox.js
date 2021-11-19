@@ -42,7 +42,7 @@ var jungle08 = new Tone.Player("https://raw.githubusercontent.com/leo-marie/Sequ
 var playersjungle = [jungle01, jungle02, jungle03, jungle04, jungle05, jungle06, jungle07, jungle08];
 
 var players = playerstekno;
-var beat = 0; // !!! declare before component or it can't be global !
+// var beat = 0; // !!! declare before component or it can't be global !
 
 // old ins
 
@@ -154,11 +154,13 @@ const createDataArray = (data) => {
     })
   }
   return [ins01Array, ins02Array, ins03Array, ins04Array, ins05Array, ins06Array, ins07Array, ins08Array];
-}
+} // create data array
 
 let PlayStopButton;
 
-const emptySequence = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0";
+// const emptySequence = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0";
+
+var beatvar = 0;
 
 // Parent
 // Children : Switch
@@ -168,6 +170,7 @@ const Groovebox = React.forwardRef((props, ref) => {
 const [started, setStarted] = useState(false);
 const [isOn, setIsOn] = useState(false);
 const [currentStep, setCurrentStep] = useState(0);
+const [beat, setBeat] = useState(0);
 const [bpm, setBpm] = useState(560);
 const [display, setDisplay] = useState("click to start");
 const [volume, setVolume] = useState({
@@ -206,25 +209,28 @@ const [savedSequence, setSavedSequence] = useState({
 
 // new
 // -----   THE LOOP   -----
-
+/* trick here : beatvar and beat are the same but we need to use beatvat(global var) for the audio
+can t work in a foreach loop with a state
+beat is a state and is used for re rendering
+*/
 const configLoop = () => {
-  const repeat = (time) => {
-    console.log(beat)
+  const repeat = (time) => {    
     sequence.forEach((row) => {
-      let pad = row[beat];
+      let pad = row[beatvar];
       if (pad === 1) {
         players[sequence.indexOf(row)].start(time);
       }
     });
-    beat = (beat + 1) % 16;
-  };
+    beatvar = (beatvar + 1) % 16;
+    setBeat(beatvar);
+  }; // repeat
   Tone.Transport.bpm.value = 120;
   Tone.Transport.scheduleRepeat(repeat, "16n");
 };
 
 // -----   USE EFFECT   -----
 
-
+/*
  // old
  // used for rerendering
 // the loop
@@ -238,6 +244,7 @@ useEffect(() => {
     clearTimeout(timer);
   };
 }, [currentStep, isOn, bpm]);
+*/
 
 /*
 // modify that
@@ -251,7 +258,7 @@ useEffect(() => {
 useEffect(() => {
   if (isOn) {setDisplay(beat+1)}
   else {setDisplay("Click to Start !")}
-}, [, currentStep])
+}, [beat])
 
 // old
 /*
@@ -311,13 +318,20 @@ useEffect(() => {
   }
 }, [mood] )
 
+useEffect(() => {
+  setBeat(0);
+  beatvar = 0;
+}, [isOn] )
+
 // -----   SET STATE METHODS   -----
 
 const startStop = () => {
-  beat = 0;
+ // beat = 0;
+ // setBeat(0);
   if(isOn) {
     Tone.Transport.stop();
     setIsOn(false);
+    
     
   } else { // if was off
     if(!started) {
@@ -329,6 +343,10 @@ const startStop = () => {
     Tone.Transport.start();
   }
 };
+
+const incrementBeat = () => {
+  setBeat(prevBeat => (prevBeat + 1) % 16)
+}
 // old
 /*
 // Set isOn
@@ -411,18 +429,6 @@ const handleSequenceSave = () => {
     sequenceToSave.jungle = actualSequence.toString();
     setSavedSequence(sequenceToSave);
   }
-}
-*/
-/*
-  console.log("mood    " + mood)
-  console.log("empty sequence    " + emptySequence)
-  console.log("saved Sequence    " + savedSequence)
-  console.log("saved Tekno Sequence    " + savedSequence.tekno)
-  console.log("saved Dub Sequence    " + savedSequence.dub)
-  console.log("saved Jungle Sequence    " + savedSequence.jungle)
-  console.log("saved Sequence    " + savedSequence)
-  console.log("actual Sequence   " + actualSequence)
-  console.log("Sequence    " + sequence)
 }
 */
 
